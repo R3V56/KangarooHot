@@ -15,11 +15,11 @@ public class Cyclops : MonoBehaviour
     public Vector3 airrate = new Vector3(.05f, .05f, .05f);
     //public float delayDuration = 2f;
 
-    
 
 
-     
-  
+
+
+
 
     void FixedUpdate()
     {
@@ -50,19 +50,25 @@ public class Cyclops : MonoBehaviour
             if (hit.collider.CompareTag("key"))
             {
                 Debug.Log("key");
-               
+               //2 delay
+               Debug.Log("key done");
+               //spawn rigidbody that deletes matching customers
             }
 
             if (hit.collider.CompareTag("luggage"))
             {
                 Debug.Log("luggage");
-               
+               //3 delay
+               Debug.Log("luggage done");
+               //spawn rigidbody that deletes matching customers
+               //
             }
             if (hit.collider.CompareTag("reservation"))
             {
                 Debug.Log("reservation");
-                
-
+                //4 delay
+                Debug.Log("reservation done");
+                //spawn rigidbody that deletes matching customers
             }
 
             if (Physics.Raycast(laser, out hit) && Input.GetMouseButton(1))
@@ -75,8 +81,10 @@ public class Cyclops : MonoBehaviour
                     Destroy(hit.transform.gameObject);
                 }
             }
-        
-    }
-}  
 
-    
+    }
+}
+//if customer deleted send signal to specific line
+  //move back 2 customers forward
+  //rand 1-3 at pos 3 of line (1=key 2=luggage 3=reservation)
+  //
