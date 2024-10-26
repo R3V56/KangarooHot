@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SpawnerSript : MonoBehaviour
 {
-    int angle = 0;
+   public int angle = 0;
 
     public Transform EnemySpawn;
 
-    float time = 0f;
-    float timeDelay = 3f;
+   public float time = 0f;
+   public float timeDelay = 10f;
     
     public GameObject customer_key, customer_luggage, customer_reservation, customers;
     // Start is called before the first frame update
