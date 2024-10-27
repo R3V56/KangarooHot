@@ -16,11 +16,12 @@ public class Cyclops : MonoBehaviour
     public float KeyDelayDuration = 2f;
     public float LugDelayDuration = 3f;
     public float ResDelayDuration = 4f;
+    //
+    public Transform pickupPoint;
+    //
 
 
-
-
-
+    //
     void FixedUpdate()
     {
         //create a new Ray object called laser
@@ -49,6 +50,18 @@ public class Cyclops : MonoBehaviour
                 StartCoroutine(HandleHitWithDelay());
                 Debug.Log("key item clicked");
                 //spawn rigidbody that deletes matching customers
+                void OnMouseDown()
+                {
+                    transform.parent = pickupPoint.transform;
+                }
+                if (hit.transform.parent == pickupPoint.transform)
+                {
+
+                }
+                void OnMouseUp()
+                {
+                    transform.parent = null;
+                }
             }
 
             if (hit.collider.CompareTag("luggage"))
@@ -88,30 +101,31 @@ public class Cyclops : MonoBehaviour
                 Debug.Log("Customer clicked");
                 //spawn rigidbody that deletes matching customers
             }
-
-
-
-
-
-
-
         }
+            //
+            
+            //
 
 
 
+         
+         //
+         
+         
+         //
 
 
-        if (Physics.Raycast(laser, out hit) && Input.GetMouseButton(1))
-        {
+         if (Physics.Raycast(laser, out hit) && Input.GetMouseButton(1))
+         {
             //same thing for the right mouse button, but instead of adding force, we spawn a new prefab
             hit.transform.localScale += airrate;
          
-         // Instantiate(prefab, hit.point, Quaternion.identity);
+          // Instantiate(prefab, hit.point, Quaternion.identity);
             if (hit.transform.localScale.y > 10f)
             {
                 Destroy(hit.transform.gameObject);
             }
-        }
+         }
     }
 
     private IEnumerator HandleHitWithDelay()
