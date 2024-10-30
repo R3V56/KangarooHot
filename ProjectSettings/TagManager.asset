@@ -11,6 +11,9 @@ TagManager:
   - CustomerKey
   - CustomerReservation
   - Bomb
+  - BombKey
+  - BombLuggage
+  - BombReservation
   layers:
   - Default
   - TransparentFX
