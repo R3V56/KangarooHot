@@ -13,16 +13,4 @@ public class EnemyMove : MonoBehaviour
       rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
       rb.velocity = transform.forward * speed;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    void OnTriggerEnter(Collider other)
-    {
-       if (other.CompareTag("Earth")){
-         SceneManager.LoadScene("Final");}
-
-  }
 }
