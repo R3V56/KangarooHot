@@ -35,7 +35,7 @@ public class SpeedChecker : MonoBehaviour
 
     void OnSpeedBelowThreshold()
     {
-        Debug.Log("Speed has been below the threshold for the set duration!");
+        Debug.Log("I want to see the manager!");
         // Implement any logic you want to trigger here
     }
 }

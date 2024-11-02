@@ -25,6 +25,7 @@ public class ReservationBomb : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("KAboooom");
+	    Manager.score += 1;
         }
 
     }

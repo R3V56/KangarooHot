@@ -15,6 +15,7 @@ public class BombLugg : MonoBehaviour
         if (boom == 0f)
         {
             //  StartCoroutine(HandleHitWithDelay());
+	    Manager.score += 1;
             Destroy(BombLuggage);
         }
 
@@ -25,6 +26,7 @@ public class BombLugg : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("KAboooom");
+	    Manager.score += 1;
         }
 
     }
