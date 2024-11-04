@@ -8,7 +8,7 @@ public class SpeedChecker : MonoBehaviour
     public float speedThreshold = 1.0f; // Set your speed threshold
     public float timeThreshold = 2.0f; // Set the time duration to check
     private float timeBelowThreshold = 0f; // Timer for how long speed is below threshold
-
+    public float rating = 2f;
     void Update()
     {
         // Check the current speed of the rigidbody
@@ -36,6 +36,20 @@ public class SpeedChecker : MonoBehaviour
     void OnSpeedBelowThreshold()
     {
         Debug.Log("I want to see the manager!");
+
+        StartCoroutine(voltron());
+
         // Implement any logic you want to trigger here
+    }
+    private IEnumerator voltron()
+    {
+        //Perform any immediate action here
+        Debug.Log("I'm going to leave a horrible review");
+        Manager.star -= 1;
+        // Wait for the specified duration
+        yield return new WaitForSeconds(rating);
+
+        // Perform the action after the delay
+        Debug.Log("rating");
     }
 }
