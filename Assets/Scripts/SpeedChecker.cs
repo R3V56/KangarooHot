@@ -24,6 +24,7 @@ public class SpeedChecker : MonoBehaviour
             if (timeBelowThreshold >= timeThreshold)
             {
                 OnSpeedBelowThreshold(); // Call your desired method
+		timeThreshold += timeBelowThreshold;
             }
         }
         else
