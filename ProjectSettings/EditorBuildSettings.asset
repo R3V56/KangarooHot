@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: cb6fe2436b9ff4d419c1ddbdd1e934de
+  - enabled: 1
+    path: Assets/Scenes/KangarooHotel.unity
+    guid: edc3807af442279439d05afef69eab78
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 59995ada25473424988d87e814e34377
   m_configObjects: {}

@@ -14,6 +14,8 @@ TagManager:
   - BombKey
   - BombLuggage
   - BombReservation
+  - GoToStart
+  - GoToGame
   layers:
   - Default
   - TransparentFX

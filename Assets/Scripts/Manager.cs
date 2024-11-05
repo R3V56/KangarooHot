@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
@@ -22,5 +23,10 @@ public class Manager : MonoBehaviour
     {
         scoretext.text = score.ToString();
         startext.text = star.ToString();
+	if (star <= 0)
+	{
+	    SceneManager.LoadScene("GameOver");
+            Debug.Log("ggggggggggggggggg");
+	}
     }
 }
