@@ -16,13 +16,13 @@ public class StartEnd : MonoBehaviour
         {
             if (hit.collider.CompareTag("GoToGame"))
             {
-		SceneManager.LoadScene("KangarooHotel");
+		     SceneManager.LoadScene("KangarooHotel");
             }
 
             if (hit.collider.CompareTag("GoToStart"))
             {
                 Debug.Log("WompWomp");
-		SceneManager.LoadScene("Start");
+		     SceneManager.LoadScene("Start");
             }
             
         }

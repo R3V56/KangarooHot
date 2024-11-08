@@ -10,7 +10,7 @@ public class Manager : MonoBehaviour
     public static int score = 0;
     public TMPro.TMP_Text scoretext;
 
-    public static float timeRemaining = 100f;
+    public static float timeRemaining = 120f;
     public TMPro.TMP_Text timetext;
 
     public static int star = 10;
@@ -20,7 +20,7 @@ public class Manager : MonoBehaviour
     {
         score = 0;
         star = 10;
-        timeRemaining = 100f;
+        timeRemaining = 120f;
     }
 
     // Update is called once per frame
