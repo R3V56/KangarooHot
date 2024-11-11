@@ -12,7 +12,7 @@ public class SpawnerSript : MonoBehaviour
    public float time = 0f;
    public float timeDelay = 10f;
     
-    public GameObject customer_key, customer_luggage, customer_reservation, customers, UiCollisionKey, UiCollisionLuggage, UiCollisionReservation, customerUi;
+    public GameObject customer_key, customer_luggage, customer_reservation, customers;
     // Start is called before the first frame update
     
     void Start()
@@ -34,22 +34,18 @@ public class SpawnerSript : MonoBehaviour
         if (buns == 1)
         {
             customers = customer_key;
-            customerUi = UiCollisionKey;
         }
         if (buns == 2)
         {
             customers = customer_reservation;
-            customerUi = UiCollisionReservation;
         }
         if (buns == 3)
         {
             customers = customer_luggage;
-            customerUi = UiCollisionLuggage;
         }
         if (buns == 4)
         {
             customers = customer_luggage;
-            customerUi = UiCollisionLuggage;
         }
         time = time + 1f * Time.deltaTime;
 
@@ -75,7 +71,6 @@ public class SpawnerSript : MonoBehaviour
             }
             transform.localEulerAngles = new Vector3(0, angle, 0);
             Instantiate(customers, EnemySpawn.position, EnemySpawn.rotation);
-            Instantiate(customerUi, UiSpawn.position, UiSpawn.rotation);
 
           }
         
