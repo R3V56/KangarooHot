@@ -5,7 +5,7 @@ using UnityEngine;
 public class BombScript : MonoBehaviour
 {
 
-    public float boomTime = 1f;
+    public float boomTime = 6f;
     public GameObject BombKey;
     // Start is called before the first frame update
     void Start()

@@ -21,7 +21,7 @@ public class Cyclops : MonoBehaviour
     
 
 
-    void FixedUpdate()
+    void Update()
     {
         //create a new Ray object called laser
         //and use the ScreenPointToRay method of cameras

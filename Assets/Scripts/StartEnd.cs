@@ -8,7 +8,7 @@ public class StartEnd : MonoBehaviour
 {
     public Vector3 airrate = new Vector3(.05f, .05f, .05f);
 
-    void FixedUpdate()
+    void Update()
     {
         Ray laser = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit = new RaycastHit();
