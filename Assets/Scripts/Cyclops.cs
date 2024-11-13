@@ -19,6 +19,7 @@ public class Cyclops : MonoBehaviour
     public Transform BombSpawn;
     public GameObject bomb_key, bomb_luggage, bomb_reservation, bomb;
     
+    
 
 
     void Update()
@@ -46,30 +47,30 @@ public class Cyclops : MonoBehaviour
             if (hit.collider.CompareTag("key"))
             {
                 Debug.Log("key");
-                StartCoroutine(HandleHitWithDelay());
-                Debug.Log("key item clicked");
-                bomb = bomb_key;
+                StartCoroutine(HandleHitWithDelay(KeyDelayDuration, bomb_key));
+              //  Debug.Log("key item clicked");
+               // bomb = bomb_key;
 
-               Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
+                 //Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
             }
 
             if (hit.collider.CompareTag("luggage"))
             {
                 Debug.Log("luggage");
-                StartCoroutine(HandleHitWithDelay());
-                Debug.Log("luggage item clicked");
-                bomb = bomb_luggage;
+                StartCoroutine(HandleHitWithDelay(LugDelayDuration, bomb_luggage));
+                //Debug.Log("luggage item clicked");
+               // bomb = bomb_luggage;
 
-              Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
+              //Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
             }
             if (hit.collider.CompareTag("reservation"))
             {
                 Debug.Log("reservation");
-                StartCoroutine(HandleHitWithDelay());
-                Debug.Log("reservation item clicked");
-                bomb = bomb_reservation;
+                StartCoroutine(HandleHitWithDelay(ResDelayDuration, bomb_reservation));
+               // Debug.Log("reservation item clicked");
+               // bomb = bomb_reservation;
 
-               Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
+               //Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
             }
             
 
@@ -98,16 +99,22 @@ public class Cyclops : MonoBehaviour
         }
     }
 
-    private IEnumerator HandleHitWithDelay()
+    IEnumerator HandleHitWithDelay(float MyItemDelay, GameObject CurrentBomb)
     {
         //Perform any immediate action here
         Debug.Log("Processing hit...");
 
         // Wait for the specified duration
-        yield return new WaitForSeconds(KeyDelayDuration);
+        yield return new WaitForSeconds(MyItemDelay);
 
         // Perform the action after the delay
         Debug.Log("Action completed after delay!");
+
+        Debug.Log("key item clicked");
+        bomb = CurrentBomb;
+
+        Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
+
     }
 
  
