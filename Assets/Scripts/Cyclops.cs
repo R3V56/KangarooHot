@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cyclops : MonoBehaviour
-
-{
+{ 
     //float time = 0f;
     //float timeDelay = 3f;
 
@@ -18,10 +17,18 @@ public class Cyclops : MonoBehaviour
     public float ResDelayDuration = 4f;
     public Transform BombSpawn;
     public GameObject bomb_key, bomb_luggage, bomb_reservation, bomb;
-    
-    
 
+    public AudioClip keyClickSound; // Sound for key object
+    public AudioClip luggageClickSound; // Sound for luggage object
+    public AudioClip reservationClickSound; // Sound for reservation object
 
+    private AudioSource audioSource; // AudioSource component
+
+    void Start()
+    {
+        // Add an AudioSource component to the GameObject this script is attached to
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
     void Update()
     {
         //create a new Ray object called laser
@@ -47,32 +54,34 @@ public class Cyclops : MonoBehaviour
             if (hit.collider.CompareTag("key"))
             {
                 Debug.Log("key");
+                PlaySound(keyClickSound);
                 StartCoroutine(HandleHitWithDelay(KeyDelayDuration, bomb_key));
-              //  Debug.Log("key item clicked");
-               // bomb = bomb_key;
+                //  Debug.Log("key item clicked");
+                // bomb = bomb_key;
 
-                 //Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
+                //Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
             }
 
             if (hit.collider.CompareTag("luggage"))
             {
                 Debug.Log("luggage");
+                PlaySound(luggageClickSound);
                 StartCoroutine(HandleHitWithDelay(LugDelayDuration, bomb_luggage));
                 //Debug.Log("luggage item clicked");
-               // bomb = bomb_luggage;
+                // bomb = bomb_luggage;
 
-              //Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
+                //Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
             }
             if (hit.collider.CompareTag("reservation"))
             {
                 Debug.Log("reservation");
+                PlaySound(reservationClickSound);
                 StartCoroutine(HandleHitWithDelay(ResDelayDuration, bomb_reservation));
-               // Debug.Log("reservation item clicked");
-               // bomb = bomb_reservation;
+                // Debug.Log("reservation item clicked");
+                // bomb = bomb_reservation;
 
-               //Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
+                //Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
             }
-            
 
 
 
@@ -80,24 +89,20 @@ public class Cyclops : MonoBehaviour
 
 
 
-        }
 
-
-
-
-
-        if (Physics.Raycast(laser, out hit) && Input.GetMouseButton(1))
-        {
-            //same thing for the right mouse button, but instead of adding force, we spawn a new prefab
-            hit.transform.localScale += airrate;
-
-            // Instantiate(prefab, hit.point, Quaternion.identity);
-            if (hit.transform.localScale.y > 10f)
-            {
-                Destroy(hit.transform.gameObject);
-            }
         }
     }
+             void PlaySound(AudioClip clip)
+             {
+                     if (clip != null && audioSource != null)
+                     {
+                       audioSource.PlayOneShot(clip); // Play the assigned sound
+                     }
+             }
+
+
+            
+        
 
     IEnumerator HandleHitWithDelay(float MyItemDelay, GameObject CurrentBomb)
     {
@@ -116,9 +121,6 @@ public class Cyclops : MonoBehaviour
         Instantiate(bomb, BombSpawn.position, BombSpawn.rotation);
 
     }
-
- 
-    
 
 }
 //if customer deleted send signal to specific line
