@@ -2,16 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CastBar : MonoBehaviour
+public class CastBarReservation : MonoBehaviour
 {
     public float explosionForce = 1f;
     public float explosionRadius = 100f;
-    public float KeyDelayDuration = 1f;
-    public float LugDelayDuration = 2f;
+    
     public float ResDelayDuration = 3f;
 
     public Transform BombSpawn; // Location where bombs will spawn
-    public GameObject bomb_key, bomb_luggage, bomb_reservation; // Bomb prefabs
+    public GameObject bomb_reservation; // Bomb prefabs
     public Slider progressBar; // UI Progress Bar
 
     private GameObject bomb; // Current bomb being used
@@ -32,15 +31,8 @@ public class CastBar : MonoBehaviour
             }
 
             // Check the tag of the object hit and handle accordingly
-            if (hit.collider.CompareTag("key"))
-            {
-                StartCoroutine(HandleHitWithDelay(KeyDelayDuration, bomb_key));
-            }
-            else if (hit.collider.CompareTag("luggage"))
-            {
-                StartCoroutine(HandleHitWithDelay(LugDelayDuration, bomb_luggage));
-            }
-            else if (hit.collider.CompareTag("reservation"))
+           
+            if (hit.collider.CompareTag("reservation"))
             {
                 StartCoroutine(HandleHitWithDelay(ResDelayDuration, bomb_reservation));
             }
