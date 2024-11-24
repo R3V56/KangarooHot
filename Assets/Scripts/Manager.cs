@@ -13,13 +13,13 @@ public class Manager : MonoBehaviour
     public static float timeRemaining = 120f;
     public TMPro.TMP_Text timetext;
 
-    public static int star = 10;
+    public static int star = 5;
     public TMPro.TMP_Text startext;
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
-        star = 10;
+        star = 5;
         timeRemaining = 120f;
     }
 

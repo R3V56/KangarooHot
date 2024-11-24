@@ -10,11 +10,16 @@ public class SpeedChecker : MonoBehaviour
     public float timeThreshold = 2.0f; // Set the time duration to check
     private float timeBelowThreshold = 0f; // Timer for how long speed is below threshold
     public float ReviewDelay = 2f;
-
+    public GameObject StarL;
+    public GameObject StarR;
     void Update()
     {
         // Check the current speed of the rigidbody
         float currentSpeed = rb.velocity.magnitude;
+
+
+        StarL = GameObject.FindWithTag("StarL");
+        StarR = GameObject.FindWithTag("StarR");
 
         // Check if the speed is below the threshold
 
@@ -43,6 +48,8 @@ public class SpeedChecker : MonoBehaviour
         Debug.Log("I want to see the manager!");
 
         StartCoroutine(UpdateStarRating());
+      
+
 
         // Implement any logic you want to trigger here
     }
@@ -51,13 +58,23 @@ public class SpeedChecker : MonoBehaviour
         //Perform any immediate action here
 
         Debug.Log("I'm going to leave a horrible review");
+
         Manager.star -= 1;
+
+        Destroy(StarL);
+        //Destroy(StarR);
+
+
+
 
         // Wait for the specified duration
 
         yield return new WaitForSeconds(ReviewDelay);
-
+        //Destroy(StarL);
+        //Destroy(StarR);
         // Perform the action after the delay
+
+
         Debug.Log("Star rating updated");
     }
 }
