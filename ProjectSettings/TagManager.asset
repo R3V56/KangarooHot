@@ -16,6 +16,8 @@ TagManager:
   - BombReservation
   - GoToStart
   - GoToGame
+  - StarL
+  - StarR
   layers:
   - Default
   - TransparentFX
