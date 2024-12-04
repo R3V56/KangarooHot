@@ -16,11 +16,22 @@ public class HighlightObject : MonoBehaviour
         }
     }
 
+    void OnMouseDown()
+    {
+        Highlight(); // Highlight when the object is clicked
+    }
+
+    void OnMouseUp()
+    {
+        RemoveHighlight(); // Remove highlight when the mouse button is released
+    }
+
     public void Highlight()
     {
         if (objectRenderer != null && highlightMaterial != null)
         {
             objectRenderer.material = highlightMaterial; // Apply highlight material
+            Debug.Log($"{gameObject.name} is highlighted!"); // Log for debugging
         }
     }
 
@@ -29,7 +40,7 @@ public class HighlightObject : MonoBehaviour
         if (objectRenderer != null && originalMaterial != null)
         {
             objectRenderer.material = originalMaterial; // Restore original material
+            Debug.Log($"{gameObject.name} highlight removed."); // Log for debugging
         }
     }
 }
-
