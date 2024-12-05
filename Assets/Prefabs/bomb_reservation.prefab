@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5715481896914985579}
   m_Layer: 0
   m_Name: bomb_reservation
-  m_TagString: Untagged
+  m_TagString: BombReservation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

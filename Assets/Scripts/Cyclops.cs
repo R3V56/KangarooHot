@@ -24,6 +24,8 @@ public class Cyclops : MonoBehaviour
 
     private AudioSource audioSource; // AudioSource component
 
+    
+
     void Start()
     {
         // Add an AudioSource component to the GameObject this script is attached to
@@ -31,6 +33,10 @@ public class Cyclops : MonoBehaviour
     }
     void Update()
     {
+        
+
+        
+        
         //create a new Ray object called laser
         //and use the ScreenPointToRay method of cameras
         //which takes an argument of a vector3 corresponding to screen position

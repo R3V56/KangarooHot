@@ -7,16 +7,20 @@ public class BombScript : MonoBehaviour
 
     public float boomTime = 6f;
     public GameObject BombKey;
+    public GameObject BombLuggage;
+    public GameObject BombReservation;
     // Start is called before the first frame update
     void Start()
     {
         BombKey = GameObject.FindWithTag("BombKey");
-
+        BombKey = GameObject.FindWithTag("BombLuggage");
+        BombKey = GameObject.FindWithTag("BombReservation");
         //yield return new WaitForSeconds(boomTime);
         if (boomTime == 0f)
         {
           //  StartCoroutine(HandleHitWithDelay());
             Destroy(BombKey);
+
         }
         
     }
@@ -25,6 +29,20 @@ public class BombScript : MonoBehaviour
         if (other.CompareTag("CustomerKey"))
         {
             Destroy(other.gameObject);
+            Debug.Log("KAboooom");
+        }
+
+        if (other.CompareTag("BombLuggage"))
+        {
+            StartCoroutine(DelayDestruction(other.gameObject, 1f)); // Delay destruction by 2 seconds
+           // Destroy(other.gameObject);
+            Debug.Log("LuggageDestroyed");
+        }
+
+        if (other.CompareTag("BombReservation"))
+        {
+            StartCoroutine(DelayDestruction(other.gameObject, 1f)); // Delay destruction by 2 seconds
+           // Destroy(other.gameObject);
             Debug.Log("KAboooom");
         }
 
@@ -44,6 +62,16 @@ public class BombScript : MonoBehaviour
 
           // Perform the action after the delay
            Debug.Log("Boom");
+    }
+    private IEnumerator DelayDestruction(GameObject obj, float delay)
+    {
+        Debug.Log($"Delaying destruction of {obj.name} for {delay} seconds.");
+        yield return new WaitForSeconds(delay);
+        if (obj != null) // Ensure the object hasn't been destroyed already
+        {
+            Destroy(obj);
+            Debug.Log($"{obj.name} has been destroyed.");
+        }
     }
 
 }

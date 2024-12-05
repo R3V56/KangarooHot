@@ -11,7 +11,16 @@ public class SpeedChecker : MonoBehaviour
     private float timeBelowThreshold = 0f; // Timer for how long speed is below threshold
     public float ReviewDelay = 2f;
     public GameObject StarL;
-    public GameObject StarR;
+    
+
+    public AudioClip StarDeath;
+    private AudioSource audioSource; // AudioSource component
+
+    void Start()
+    {
+        // Add an AudioSource component to the GameObject this script is attached to
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
     void Update()
     {
         // Check the current speed of the rigidbody
@@ -19,7 +28,7 @@ public class SpeedChecker : MonoBehaviour
 
 
         StarL = GameObject.FindWithTag("StarL");
-        StarR = GameObject.FindWithTag("StarR");
+        
 
         // Check if the speed is below the threshold
 
@@ -32,7 +41,7 @@ public class SpeedChecker : MonoBehaviour
             if (timeBelowThreshold >= timeThreshold)
             {
                 OnSpeedBelowThreshold(); // Call your desired method
-		timeThreshold += timeBelowThreshold;
+		        timeThreshold += timeBelowThreshold;
             }
         }
         else
@@ -42,7 +51,7 @@ public class SpeedChecker : MonoBehaviour
         }
 
     }
-
+    
     void OnSpeedBelowThreshold()
     {
         Debug.Log("I want to see the manager!");
@@ -60,10 +69,10 @@ public class SpeedChecker : MonoBehaviour
         Debug.Log("I'm going to leave a horrible review");
 
         Manager.star -= 1;
-
+        PlaySound(StarDeath);
         Destroy(StarL);
         //Destroy(StarR);
-
+       
 
 
 
@@ -76,5 +85,12 @@ public class SpeedChecker : MonoBehaviour
 
 
         Debug.Log("Star rating updated");
+    }
+    void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip); // Play the assigned sound
+        }
     }
 }

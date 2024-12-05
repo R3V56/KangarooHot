@@ -222,9 +222,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4762232566063137576}
-  speedThreshold: 1
+  speedThreshold: 0.1
   timeThreshold: 10
   ReviewDelay: 2
+  StarL: {fileID: 0}
+  StarDeath: {fileID: 8300000, guid: 1b744afd42e5d2647bd13251427d50c2, type: 3}
 --- !u!1 &6957915919548603202
 GameObject:
   m_ObjectHideFlags: 0
