@@ -32,19 +32,7 @@ public class BombScript : MonoBehaviour
             Debug.Log("KAboooom");
         }
 
-        if (other.CompareTag("BombLuggage"))
-        {
-            StartCoroutine(DelayDestruction(other.gameObject, 1f)); // Delay destruction by 2 seconds
-           // Destroy(other.gameObject);
-            Debug.Log("LuggageDestroyed");
-        }
-
-        if (other.CompareTag("BombReservation"))
-        {
-            StartCoroutine(DelayDestruction(other.gameObject, 1f)); // Delay destruction by 2 seconds
-           // Destroy(other.gameObject);
-            Debug.Log("KAboooom");
-        }
+        
 
     }
     void DestroyObjectDelayed()

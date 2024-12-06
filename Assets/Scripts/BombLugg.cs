@@ -31,19 +31,7 @@ public class BombLugg : MonoBehaviour
             Debug.Log("KAboooom");
 	       Manager.score += 1;
         }
-        if (other.CompareTag("BombKey"))
-        {
-            StartCoroutine(DelayDestruction(other.gameObject, 3f)); // Delay destruction by 2 seconds
-           // Destroy(other.gameObject);
-            Debug.Log("KAboooom");
-        }
-
-        if (other.CompareTag("BombReservation"))
-        {
-            StartCoroutine(DelayDestruction(other.gameObject, 3f)); // Delay destruction by 2 seconds
-           // Destroy(other.gameObject);
-            Debug.Log("KAboooom");
-        }
+        
     }
     void DestroyObjectDelayed()
     {

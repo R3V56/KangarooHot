@@ -30,19 +30,7 @@ public class ReservationBomb : MonoBehaviour
             Debug.Log("KAboooom");
 	     Manager.score += 1;
         }
-        if (other.CompareTag("BombKey"))
-        {
-            StartCoroutine(DelayDestruction(other.gameObject, 2f)); // Delay destruction by 2 seconds
-          //  Destroy(other.gameObject);
-            Debug.Log("KAboooom");
-        }
-
-        if (other.CompareTag("BombLuggage"))
-        {
-            StartCoroutine(DelayDestruction(other.gameObject, 2f)); // Delay destruction by 2 seconds
-           // Destroy(other.gameObject);
-            Debug.Log("KAboooom");
-        }
+        
 
     }
     void DestroyObjectDelayed()
