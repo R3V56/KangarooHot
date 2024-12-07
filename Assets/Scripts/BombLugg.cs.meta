@@ -3,7 +3,11 @@ guid: cd9d116d060d2bd42a0c7d8b6f09c7c3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - BombLuggage: {instanceID: 0}
+  - BombReservation: {instanceID: 0}
+  - BombKey: {instanceID: 0}
+  - Confetti: {fileID: 856116482236004440, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

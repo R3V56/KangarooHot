@@ -8,6 +8,7 @@ public class BombLugg : MonoBehaviour
     public GameObject BombLuggage;
     public GameObject BombReservation;
     public GameObject BombKey;
+    public GameObject Confetti;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,10 @@ public class BombLugg : MonoBehaviour
         {
             //  StartCoroutine(HandleHitWithDelay());
 	    Manager.score += 1;
+          
+
             Destroy(BombLuggage);
+          
         }
 
     }
@@ -28,6 +32,7 @@ public class BombLugg : MonoBehaviour
         if (other.CompareTag("CustomerLuggage"))
         {
             Destroy(other.gameObject);
+
             Debug.Log("KAboooom");
 	       Manager.score += 1;
         }
@@ -57,6 +62,13 @@ public class BombLugg : MonoBehaviour
         {
             Destroy(obj);
             Debug.Log($"{obj.name} has been destroyed.");
+
+
+            //Vector3 spawnPosition = BombLuggage.transform.position;
+            //Instantiate(Confetti, spawnPosition, Quaternion.identity);
+            //Debug.Log("Boom condition met!");
+
+
         }
     }
 }
