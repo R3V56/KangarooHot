@@ -9,6 +9,8 @@ public class BombScript : MonoBehaviour
     public GameObject BombKey;
     public GameObject BombLuggage;
     public GameObject BombReservation;
+    public GameObject Confetti;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class BombScript : MonoBehaviour
         if (other.CompareTag("CustomerKey"))
         {
             Destroy(other.gameObject);
+ 
             Debug.Log("KAboooom");
         }
 
@@ -58,6 +61,9 @@ public class BombScript : MonoBehaviour
         if (obj != null) // Ensure the object hasn't been destroyed already
         {
             Destroy(obj);
+           
+            Debug.Log("Boom condition met!");
+
             Debug.Log($"{obj.name} has been destroyed.");
         }
     }

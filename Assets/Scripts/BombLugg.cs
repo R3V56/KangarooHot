@@ -51,6 +51,8 @@ public class BombLugg : MonoBehaviour
         // Wait for the specified duration
         yield return new WaitForSeconds(boom);
 
+       
+
         // Perform the action after the delay
         Debug.Log("Boom");
     }
@@ -62,11 +64,6 @@ public class BombLugg : MonoBehaviour
         {
             Destroy(obj);
             Debug.Log($"{obj.name} has been destroyed.");
-
-
-            //Vector3 spawnPosition = BombLuggage.transform.position;
-            //Instantiate(Confetti, spawnPosition, Quaternion.identity);
-            //Debug.Log("Boom condition met!");
 
 
         }

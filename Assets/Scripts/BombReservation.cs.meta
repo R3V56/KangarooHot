@@ -3,7 +3,8 @@ guid: 9e4dca01afefef54f99270d432ad8425
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ConfettiPrefab: {fileID: 856116482236004440, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

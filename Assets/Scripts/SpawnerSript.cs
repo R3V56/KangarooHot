@@ -8,8 +8,8 @@ public class SpawnerSript : MonoBehaviour
 
     public Transform EnemySpawn;
     public Transform UiSpawn;
-
-   public float time = 0f;
+   
+    public float time = 0f;
    public float timeDelay = 10f;
     
     public GameObject customer_key, customer_luggage, customer_reservation, customers;
@@ -71,8 +71,10 @@ public class SpawnerSript : MonoBehaviour
             }
             transform.localEulerAngles = new Vector3(0, angle, 0);
             Instantiate(customers, EnemySpawn.position, EnemySpawn.rotation);
+         
+      
 
-          }
+        }
         
 
 
