@@ -31,6 +31,8 @@ public class BombLugg : MonoBehaviour
     {
         if (other.CompareTag("CustomerLuggage"))
         {
+
+            SpawnConfetti(other.transform.position); // Spawn confetti at the object's position
             Destroy(other.gameObject);
 
             Debug.Log("KAboooom");
@@ -60,12 +62,23 @@ public class BombLugg : MonoBehaviour
     {
         Debug.Log($"Delaying destruction of {obj.name} for {delay} seconds.");
         yield return new WaitForSeconds(delay);
-        if (obj != null) // Ensure the object hasn't been destroyed already
+
+        if (obj != null)
         {
+            SpawnConfetti(obj.transform.position); // Spawn confetti at the object's position
             Destroy(obj);
             Debug.Log($"{obj.name} has been destroyed.");
-
-
+        }
+    }
+    private void SpawnConfetti(Vector3 position)
+    {
+        if (Confetti != null)
+        {
+            Instantiate(Confetti, position, Quaternion.identity); // Spawn confetti effect
+        }
+        else
+        {
+            Debug.LogWarning("Confetti prefab is not assigned!");
         }
     }
 }

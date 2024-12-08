@@ -2033,7 +2033,7 @@ MonoBehaviour:
   BombLuggage: {fileID: 402038028}
   BombReservation: {fileID: 402038028}
   BombKey: {fileID: 1669145066}
-  Confetti: {fileID: 0}
+  Confetti: {fileID: 856116482236004440, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
 --- !u!54 &402038039
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2490,7 +2490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856116482236004444, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -13.67
       objectReference: {fileID: 0}
     - target: {fileID: 856116482236004444, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2531,6 +2531,18 @@ PrefabInstance:
     - target: {fileID: 4892046726100748399, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
       propertyPath: stopAction
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892046726100748399, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
+      propertyPath: UVModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892046726100748399, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892046726100748399, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4553,8 +4565,8 @@ MonoBehaviour:
   bomb_reservation: {fileID: 7038041697170544357, guid: 16a750a6fa339434db38681b4a57c53e, type: 3}
   bomb: {fileID: 0}
   keyClickSound: {fileID: 8300000, guid: 1b744afd42e5d2647bd13251427d50c2, type: 3}
-  luggageClickSound: {fileID: 8300000, guid: 2630d1d99dd68aa408280dc685cb7c14, type: 3}
-  reservationClickSound: {fileID: 8300000, guid: 3c0ea40dee1cf3348b317ab77b55515f, type: 3}
+  luggageClickSound: {fileID: 8300000, guid: 35a58d91ab7f28f42a4cd6afc5f24acb, type: 3}
+  reservationClickSound: {fileID: 8300000, guid: 1fab87fe2dad0ec4eb16ea5244502dbd, type: 3}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9315,6 +9327,7 @@ MonoBehaviour:
   BombReservation: {fileID: 1661528933}
   BombLuggage: {fileID: 402038028}
   BombKey: {fileID: 1669145066}
+  Confetti: {fileID: 856116482236004440, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
 --- !u!54 &1661528944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9363,7 +9376,7 @@ MonoBehaviour:
   BombKey: {fileID: 1669145066}
   BombLuggage: {fileID: 402038028}
   BombReservation: {fileID: 1661528933}
-  Confetti: {fileID: 0}
+  Confetti: {fileID: 856116482236004440, guid: c89e9397f92d2064b8506a6f04283443, type: 3}
 --- !u!114 &1669145077
 MonoBehaviour:
   m_ObjectHideFlags: 0

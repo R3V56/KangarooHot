@@ -8,6 +8,7 @@ public class ReservationBomb : MonoBehaviour
     public GameObject BombReservation;
     public GameObject BombLuggage;
     public GameObject BombKey;
+    public GameObject Confetti;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class ReservationBomb : MonoBehaviour
     {
         if (other.CompareTag("CustomerReservation"))
         {
+            SpawnConfetti(other.transform.position); // Spawn confetti at the object's position
             Destroy(other.gameObject);
             Debug.Log("KAboooom");
 	     Manager.score += 1;
@@ -53,10 +55,23 @@ public class ReservationBomb : MonoBehaviour
     {
         Debug.Log($"Delaying destruction of {obj.name} for {delay} seconds.");
         yield return new WaitForSeconds(delay);
-        if (obj != null) // Ensure the object hasn't been destroyed already
+
+        if (obj != null)
         {
+            SpawnConfetti(obj.transform.position); // Spawn confetti at the object's position
             Destroy(obj);
             Debug.Log($"{obj.name} has been destroyed.");
+        }
+    }
+    private void SpawnConfetti(Vector3 position)
+    {
+        if (Confetti != null)
+        {
+            Instantiate(Confetti, position, Quaternion.identity); // Spawn confetti effect
+        }
+        else
+        {
+            Debug.LogWarning("Confetti prefab is not assigned!");
         }
     }
 }

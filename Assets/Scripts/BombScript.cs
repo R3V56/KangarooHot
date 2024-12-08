@@ -30,6 +30,7 @@ public class BombScript : MonoBehaviour
     {
         if (other.CompareTag("CustomerKey"))
         {
+            SpawnConfetti(other.transform.position); // Spawn confetti at the object's position
             Destroy(other.gameObject);
  
             Debug.Log("KAboooom");
@@ -38,11 +39,7 @@ public class BombScript : MonoBehaviour
         
 
     }
-    void DestroyObjectDelayed()
-    {
-        // Kills the game object in 5 seconds after loading the object
-        Destroy(BombKey, 5);
-    }
+    
     private IEnumerator HandleHitWithDelay()
     {
          //Perform any immediate action here
@@ -58,13 +55,23 @@ public class BombScript : MonoBehaviour
     {
         Debug.Log($"Delaying destruction of {obj.name} for {delay} seconds.");
         yield return new WaitForSeconds(delay);
-        if (obj != null) // Ensure the object hasn't been destroyed already
-        {
-            Destroy(obj);
-           
-            Debug.Log("Boom condition met!");
 
+        if (obj != null)
+        {
+            SpawnConfetti(obj.transform.position); // Spawn confetti at the object's position
+            Destroy(obj);
             Debug.Log($"{obj.name} has been destroyed.");
+        }
+    }
+    private void SpawnConfetti(Vector3 position)
+    {
+        if (Confetti != null)
+        {
+            Instantiate(Confetti, position, Quaternion.identity); // Spawn confetti effect
+        }
+        else
+        {
+            Debug.LogWarning("Confetti prefab is not assigned!");
         }
     }
 
