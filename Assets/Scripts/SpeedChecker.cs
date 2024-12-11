@@ -28,7 +28,7 @@ public class SpeedChecker : MonoBehaviour
 
 
         StarL = GameObject.FindWithTag("StarL");
-        
+        transform.GetChild(0).GetChild(1).gameObject.GetComponent<Renderer>().material.color = Color.Lerp(Color.white, Color.red, timeBelowThreshold / timeThreshold);
 
         // Check if the speed is below the threshold
 
