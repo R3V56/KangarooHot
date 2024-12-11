@@ -70,7 +70,7 @@ public class SpeedChecker : MonoBehaviour
 
         Manager.star -= 1;
         PlaySound(StarDeath);
-        Destroy(StarL);
+        Destroy(StarL.transform.GetChild(Manager.star).gameObject);
         //Destroy(StarR);
        
 

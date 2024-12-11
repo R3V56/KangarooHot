@@ -1302,7 +1302,7 @@ GameObject:
   - component: {fileID: 279597770}
   m_Layer: 0
   m_Name: StarObject (3)
-  m_TagString: StarL
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1921,7 +1921,7 @@ GameObject:
   - component: {fileID: 355569915}
   m_Layer: 0
   m_Name: StarObject (4)
-  m_TagString: StarL
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3536,9 +3536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d2935e840bb0144ac9ca0c6d97bed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownDuration: 2
-  objectRenderer: {fileID: 0}
-  originalLayer: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4198,7 +4195,7 @@ PrefabInstance:
     - target: {fileID: -1602238644875344336, guid: 2559013597445b34a8de8f46846e4b03, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 33fe205048434cb4c87bfa419fbe1aae, type: 2}
+      objectReference: {fileID: 2100000, guid: e3410565cadb9714b8d17f30ed85886f, type: 2}
     - target: {fileID: -1120989108687609925, guid: 2559013597445b34a8de8f46846e4b03, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -6891,9 +6888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d2935e840bb0144ac9ca0c6d97bed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownDuration: 1
-  objectRenderer: {fileID: 0}
-  originalLayer: 0
 --- !u!1 &1284125382
 GameObject:
   m_ObjectHideFlags: 0
@@ -7250,7 +7244,7 @@ GameObject:
   - component: {fileID: 1362373814}
   m_Layer: 0
   m_Name: StarObject (2)
-  m_TagString: StarL
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7758,9 +7752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d2935e840bb0144ac9ca0c6d97bed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownDuration: 1
-  objectRenderer: {fileID: 0}
-  originalLayer: 0
 --- !u!1001 &1420751836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8935,9 +8926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d2935e840bb0144ac9ca0c6d97bed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownDuration: 2
-  objectRenderer: {fileID: 0}
-  originalLayer: 0
 --- !u!1 &1562027590
 GameObject:
   m_ObjectHideFlags: 0
@@ -10058,7 +10046,7 @@ GameObject:
   - component: {fileID: 1796554331}
   m_Layer: 0
   m_Name: StarObject (1)
-  m_TagString: StarL
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11725,7 +11713,7 @@ GameObject:
   - component: {fileID: 2005097254}
   m_Layer: 0
   m_Name: StarParent
-  m_TagString: Untagged
+  m_TagString: StarL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12290,7 +12278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 299608743655343965, guid: 30dd8438674a9ec47882e79b69f048ad, type: 3}
       propertyPath: m_TagString
-      value: StarL
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1603663313217518934, guid: 30dd8438674a9ec47882e79b69f048ad, type: 3}
       propertyPath: m_LocalScale.x
